@@ -13,9 +13,7 @@ const userRoute = require("./routes/user");
 port = 8000
 dotenv.config();
 
-app.get("/test-api", (req, res) => {
-    res.send("Hello");
-})
+
 
 mongoose.connect(process.env.MONGODB_URL, () => {
     console.log("Mongodb connected")
@@ -23,6 +21,10 @@ mongoose.connect(process.env.MONGODB_URL, () => {
 
 app.get("/", (req, res) => {
     res.send("Express on Vercel");
+});
+
+app.get("/test-api", (req, res) => {
+    res.send("Hello");
 });
 
 app.use(bodyParser.json({limit: "50mb"}));
