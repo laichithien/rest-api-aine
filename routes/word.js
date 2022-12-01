@@ -10,4 +10,11 @@ router.get("/", wordController.getAllWord);
 
 // add example to a word
 router.put("/add/example/id/:id",wordController.addExample);
+
+// Get word by name
+router.get("/name/:name", wordController.getWordByName);
+
+// Get word by fullname
+router.get("/fname/:fname", wordController.getWordByFName);
+
 module.exports = router;

@@ -13,6 +13,11 @@ const lectureSchema = new mongoose.Schema({
 })
 
 const englishWordSchema = new mongoose.Schema({
+    fullName: {
+        type: String,
+        require: true,
+        unique: true
+    },
     name: {
         type: String,
         require: true,

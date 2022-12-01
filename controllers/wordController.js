@@ -45,6 +45,22 @@ const wordController = {
             console.log(error);
             res.status(500).json(error);
         }
+    },
+    getWordByName: async (req, res) => {
+        try {
+            const word = await Word.find({name: req.params.name});
+            res.status(200).json(word);
+        } catch (error) {
+            res.status(500).json(error);
+        }
+    },
+    getWordByFName: async (req, res) => {
+        try {
+            const word = await Word.find({fullName: req.params.fname});
+            res.status(200).json(word);
+        } catch (error) {
+            res.status(500).json(error);
+        }
     }
 }
 
