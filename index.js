@@ -13,8 +13,6 @@ const userRoute = require("./routes/user");
 port = 8000
 dotenv.config();
 
-
-
 mongoose.connect(process.env.MONGODB_URL, () => {
     console.log("Mongodb connected")
 })

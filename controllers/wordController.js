@@ -28,7 +28,8 @@ const wordController = {
     getAllWord: async (req, res) => {
         try {
             const word = await Word.find();
-            res.status(200).json(word);
+            // res.status(200).json(word);
+            res.json(word);
         } catch (error) {
             console.log(error);
             res.status(500).json(error);
