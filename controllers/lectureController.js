@@ -1,4 +1,4 @@
-const { Eng } = require("../../model/model");
+const { Eng } = require("../model/model");
 const { Lecture, Word, User } = require("../model/model");
 
 const lectureController = {
