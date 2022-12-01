@@ -31,4 +31,6 @@ app.use("/v1/user", userRoute);
 
 // app.listen(port, () => {
 //     console.log("Server dang chay");
-// })
+// })\
+
+module.exports = app;
