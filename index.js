@@ -21,6 +21,10 @@ mongoose.connect(process.env.MONGODB_URL, () => {
     console.log("Mongodb connected")
 })
 
+app.get("/", (req, res) => {
+    res.send("Express on Vercel");
+});
+
 app.use(bodyParser.json({limit: "50mb"}));
 app.use(cors());
 app.use(morgan("common"));
@@ -29,8 +33,8 @@ app.use("/v1/lecture", lectureRoute);
 app.use("/v1/word", wordRoute);
 app.use("/v1/user", userRoute);
 
-// app.listen(port, () => {
-//     console.log("Server dang chay");
-// })\
+app.listen(port, () => {
+    console.log("Server dang chay");
+})
 
 module.exports = app;
