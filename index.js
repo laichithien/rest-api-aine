@@ -14,7 +14,7 @@ port = 8000
 dotenv.config();
 
 app.get("/test-api", (req, res) => {
-    res.status(200).json("Hello");
+    res.send("Hello");
 })
 
 mongoose.connect(process.env.MONGODB_URL, () => {
