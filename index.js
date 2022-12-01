@@ -29,6 +29,6 @@ app.use("/v1/lecture", lectureRoute);
 app.use("/v1/word", wordRoute);
 app.use("/v1/user", userRoute);
 
-app.listen(port, () => {
-    console.log("Server dang chay");
-})
+// app.listen(port, () => {
+//     console.log("Server dang chay");
+// })
