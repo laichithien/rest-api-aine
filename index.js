@@ -20,10 +20,10 @@ mongoose.connect(process.env.MONGODB_URL, () => {
 })
 
 app.get("/", (req, res) => {
-    res.send("Express on Vercel");
+    res.send("Express Vercel");
 });
 
-app.get("/test-api/", (req, res) => {
+app.get("/test-api", (req, res) => {
     res.send("Hello");
 });
 
