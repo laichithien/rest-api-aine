@@ -23,7 +23,7 @@ app.get("/", (req, res) => {
     res.send("Express on Vercel");
 });
 
-app.get("/test-api", (req, res) => {
+app.get("/test-api/", (req, res) => {
     res.send("Hello");
 });
 
