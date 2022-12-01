@@ -19,9 +19,9 @@ mongoose.connect(process.env.MONGODB_URL, () => {
     console.log("Mongodb connected")
 })
 
-// app.get("/", (req, res) => {
-//     res.send("Express Vercel");
-// });
+app.get("/", (req, res) => {
+    res.send("Express Vercel");
+});
 
 app.get("/test-api", (req, res) => {
     res.send("Hello");
