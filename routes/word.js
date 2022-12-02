@@ -17,4 +17,7 @@ router.get("/name/:name", wordController.getWordByName);
 // Get word by fullname
 router.get("/fname/:fname", wordController.getWordByFName);
 
+// Testing 
+router.get("/test", wordController.test);
+
 module.exports = router;

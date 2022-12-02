@@ -5,8 +5,6 @@ const { addWord } = require("./lectureController");
 const wordController = {
     addWord: async (req, res) => {
         try {
-           
-            
             const newWord = new Word(req.body);
             const savedWord = await newWord.save();
             res.status(200).json(savedWord);
@@ -20,10 +18,7 @@ const wordController = {
             {
                 addWord(element,res);
             }
-            
         });
-       
-        
     },
     getAllWord: async (req, res) => {
         try {
@@ -61,6 +56,9 @@ const wordController = {
         } catch (error) {
             res.status(500).json(error);
         }
+    },
+    test: (req, res) => {
+        res.status(200).json("Routing is fine")
     }
 }
 
