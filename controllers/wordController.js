@@ -59,6 +59,14 @@ const wordController = {
     },
     test: (req, res) => {
         res.status(200).json("Routing is fine")
+    },
+    getWordByID: async (req, res) => {
+        try {
+            const word = await Word.findById(req.params.id);
+            res.status(200).json(word);
+        } catch (error) {
+            res.status(500).json(error)
+        }
     }
 }
 

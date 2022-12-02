@@ -17,6 +17,9 @@ router.get("/name/:name", wordController.getWordByName);
 // Get word by fullname
 router.get("/fname/:fname", wordController.getWordByFName);
 
+// Get word by id
+router.get("/id/:id", wordController.getWordByID);
+
 // Testing 
 router.get("/test", wordController.test);
 
