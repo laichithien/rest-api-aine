@@ -12,7 +12,7 @@ const userRoute = require("./routes/user");
 
 const Word = require("./model/model")
 
-port = 8000
+const port = process.env.PORT || 8000
 dotenv.config();
 
 mongoose.connect(process.env.MONGODB_URL, () => {
