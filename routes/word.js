@@ -23,4 +23,6 @@ router.get("/id/:id", wordController.getWordByID);
 // Testing 
 router.get("/test", wordController.test);
 
+// Get random 
+router.get("/random/:number", wordController.getRandom);
 module.exports = router;

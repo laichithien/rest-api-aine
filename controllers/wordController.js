@@ -67,6 +67,14 @@ const wordController = {
         } catch (error) {
             res.status(500).json(error)
         }
+    },
+    getRandom: async (req, res) => {
+        try {
+            const words = await Word.aggregate([{$sample: {size: Number(req.params.number)}}]); // You want to get 5 docs
+            res.status(200).json(words);
+        } catch (error) {
+            res.status(500).json(error);
+        }
     }
 }
 
