@@ -31,10 +31,16 @@ const lectureController = {
         try {
             const lecture = await Lecture.findById(req.params.id);
             const word = await Word.findOne({name: req.body.name});
-            console.log(word);
-            console.log(lecture);
             await lecture.updateOne({$addToSet: {contents: word._id}});
             res.status(200).json("Added");
+        } catch (error) {
+            res.status(500).json(error);
+        }
+    },
+    getLectureByNum: async (req, res) => {
+        try {
+            const lecture = await Lecture.findOne({orNum: req.params.num});
+            res.status(200).json(lecture);
         } catch (error) {
             res.status(500).json(error);
         }

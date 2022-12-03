@@ -8,6 +8,9 @@ router.post("/", lectureController.addLecture);
 // Get all lectures
 router.get("/", lectureController.getAllLecture);
 
+// Get lecture by orNum
+router.get("/num/:num", lectureController.getLectureByNum);
+
 // Delete lecture by ID 
 router.delete("/id/:id", lectureController.deleteLecture);
 
