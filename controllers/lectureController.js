@@ -39,7 +39,7 @@ const lectureController = {
     },
     getLectureByNum: async (req, res) => {
         try {
-            const lecture = await Lecture.findOne({orNum: req.params.num});
+            const lecture = await Lecture.findOne({orNum: req.params.num}).populate('contents');
             res.status(200).json(lecture);
         } catch (error) {
             res.status(500).json(error);
