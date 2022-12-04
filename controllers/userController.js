@@ -55,6 +55,14 @@ const userController = {
         } catch (error) {
             res.status(500).json(error);
         }
+    },
+    getUserByEmail: async (req, res) => {
+        try {
+            const user = await User.findOne({email: req.params.email}).populate('doneLecture', 'orNum');
+            res.status(200).json(user);
+        } catch (error) {
+            res.status(500).json(error);
+        }
     }
 };
 
