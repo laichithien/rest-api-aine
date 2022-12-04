@@ -34,6 +34,24 @@ const userController = {
         } catch (error) {
             res.status(500).json(error);
         }
+    },
+    addLecture: async (req, res) => {
+        try {
+            const user = await User.find({nickName: req.params.nickName});
+            const lecture = await Lecture.find({orNum: req.body.orNum});
+            await user.updateOne({$addToSet: {doneLecture: lecture._id}});
+            res.status(200).json("Added");
+        } catch (error) {
+            res.status(500).json(error);
+        }
+    },
+    getUser: async (req, res) => {
+        try {
+            const user = await User.find({nickName: req.params.nickName});
+            res.status(200).json(user);
+        } catch (error) {
+            res.status(500).json(error);
+        }
     }
 };
 
