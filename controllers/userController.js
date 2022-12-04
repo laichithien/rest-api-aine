@@ -39,7 +39,7 @@ const userController = {
         try {
             const user = await User.findOne({nickName: req.params.nickName});
             const lecture = await Lecture.findOne({orNum: req.body.orNum});
-            console(req.body);
+            console.log(req.body);
             console.log(lecture);
             await user.updateOne({$addToSet: {doneLecture: lecture._id}});
             res.status(200).json("Added");
