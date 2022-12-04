@@ -63,6 +63,16 @@ const userController = {
         } catch (error) {
             res.status(500).json(error);
         }
+    },
+    addLectureByEmail: async (req, res) => {
+        try {
+            const user = await User.findOne({email: req.params.email});
+            const lecture = await Lecture.findOne({orNum: req.body.orNum});
+            await user.updateOne({$addToSet: {doneLecture: lecture._id}});
+            res.status(200).json("Added");
+        } catch (error) {
+            res.status(500).json(error);
+        }
     }
 };
 

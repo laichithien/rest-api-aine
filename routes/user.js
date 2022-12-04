@@ -22,4 +22,7 @@ router.get("/nickName/:nickName", userController.getUser);
 // get user email
 router.get("/email/:email", userController.getUserByEmail);
 
+// Add lecture by email
+router.put("/addlecture/email/:email", userController.addLectureByEmail);
+
 module.exports = router;
