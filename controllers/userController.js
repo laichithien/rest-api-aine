@@ -50,7 +50,7 @@ const userController = {
     },
     getUser: async (req, res) => {
         try {
-            const user = await User.findOne({nickName: req.params.nickName});
+            const user = await User.findOne({nickName: req.params.nickName}).populate('doneLecture', 'orNum');
             res.status(200).json(user);
         } catch (error) {
             res.status(500).json(error);
