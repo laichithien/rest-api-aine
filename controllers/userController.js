@@ -42,6 +42,7 @@ const userController = {
             await user.updateOne({$addToSet: {doneLecture: lecture._id}});
             res.status(200).json("Added");
         } catch (error) {
+            console.log(error);
             res.status(500).json(error);
         }
     },
