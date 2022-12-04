@@ -37,7 +37,7 @@ const userController = {
     },
     addLecture: async (req, res) => {
         try {
-            const user = await User.find({nickName: req.params.nickName});
+            const user = await User.findOne({nickName: req.params.nickName});
             const lecture = await Lecture.find({orNum: req.body.orNum});
             await user.updateOne({$addToSet: {doneLecture: lecture._id}});
             res.status(200).json("Added");
