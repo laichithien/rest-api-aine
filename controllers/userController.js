@@ -49,7 +49,7 @@ const userController = {
     },
     getUser: async (req, res) => {
         try {
-            const user = await User.find({nickName: req.params.nickName});
+            const user = await User.findOne({nickName: req.params.nickName});
             res.status(200).json(user);
         } catch (error) {
             res.status(500).json(error);
